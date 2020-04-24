@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jefvel cool we b site</title>
+    <link>https://jefvel.github.io/jefvel.net/</link>
+    <description>Recent content on jefvel cool we b site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Apr 2020 13:28:30 +0200</lastBuildDate>
+    
+	<atom:link href="https://jefvel.github.io/jefvel.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Heaps Cool Guide Pt 1</title>
+      <link>https://jefvel.github.io/jefvel.net/posts/heaps-cool-guide-pt-1/</link>
+      <pubDate>Fri, 24 Apr 2020 13:28:30 +0200</pubDate>
+      
+      <guid>https://jefvel.github.io/jefvel.net/posts/heaps-cool-guide-pt-1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
