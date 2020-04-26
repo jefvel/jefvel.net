@@ -3,22 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jefvel.net/</loc>
-    <lastmod>2020-04-24T18:14:14+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jefvel.net/posts/</loc>
-    <lastmod>2020-04-24T18:14:14+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jefvel.net/posts/test-post/</loc>
-    <lastmod>2020-04-24T18:14:14+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jefvel.net/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefvel.net/</loc>
   </url>
   
   <url>
