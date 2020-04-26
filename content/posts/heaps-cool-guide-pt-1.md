@@ -1,7 +1,7 @@
 ---
 title: "Heaps Cool Guide Pt 1"
 date: 2020-04-24T13:28:30+02:00
-draft: true
+draft: false
 ---
 
 ![logo](https://i.imgur.com/O6SdYdN.png)
@@ -126,5 +126,5 @@ The main file of the game. The main game loop runs in here.
 ## Next Steps
 
 Here I have listed the setup steps for Heaps and HashLink. I am planning on adding more features to this starter pack, and
-document it in future guides/tutorials. Let me know if it's of interest.
+document it in future guides/tutorials. [Let me know](https://twitter.com/jefvel) if it's of interest.
 
