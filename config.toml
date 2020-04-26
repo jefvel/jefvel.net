@@ -1,4 +1,4 @@
-baseURL = "https://aksel.me/jefvel.net/"
+baseURL = "https://jefvel.net/"
 languageCode = "en-us"
-title = "jefvel cool we b site"
-theme = "ananke"
+title = "jefvel"
+theme = "cooltheme"

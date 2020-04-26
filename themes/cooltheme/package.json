@@ -1,0 +1,9 @@
+{
+  "name": "cooltheme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "tachyons": "^4.12.0"
+  }
+}
