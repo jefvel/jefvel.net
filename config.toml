@@ -1,7 +1,7 @@
 baseURL = "https://jefvel.net/"
 languageCode = "en-us"
 title = "jefvel"
-theme = "terminal"
+theme = "cooltheme"
 
 [params]
   contentTypeName = "posts"
