@@ -1,30 +1,26 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
+# abort on errors
+set -e
 
+# build
+yarn build
 
-if [ "`git status -s`" ]
-then
-      echo "The working directory is dirty. Please commit any pending changes."
-          exit 1;
-fi
+# navigate into the build output directory
+cd dist
 
-echo "Deleting old publication"
-rm -rf public
-mkdir public
-git worktree prune
-rm -rf .git/worktrees/public/
+# if you are deploying to a custom domain
+# echo 'www.example.com' > CNAME
 
-echo "Checking out gh-pages branch into public"
-git worktree add -B gh-pages public origin/gh-pages
+git init
+git checkout -b gh-pages
+git add -A
+git commit -m 'deploy'
 
-echo "Removing existing files"
-rm -rf public/*
+# if you are deploying to https://<USERNAME>.github.io
+git push -f git@github.com:jefvel/jefvel.github.io.git gh-pages
 
-echo "Generating site"
-hugo
+# if you are deploying to https://<USERNAME>.github.io/<REPO>
+# git push -f git@github.com:<USERNAME>/<REPO>.git main:gh-pages
 
-echo "Updating gh-pages branch"
-cd public && git pull && git add --all && git commit -m "Publishing to gh-pages (publish.sh)"
-
-echo "Pushing to github"
-git push --all
+cd -
