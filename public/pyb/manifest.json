@@ -1,7 +1,7 @@
 {
 	"name": "Pack Your Bags",
 	"short_name": "Pack Your Bags",
-	"description": "Your game Description",
+	"description": "Try to survive escaping a zombie infested city",
 	"display": "fullscreen",
 	"orientation": "landscape",
     "start_url": "index.html",
