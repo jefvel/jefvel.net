@@ -1,0 +1,303 @@
+body {
+    font-family: 'Fredoka One', cursive;
+    position:absolute;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+}
+
+#gamecanvas {
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:1;
+}
+
+#gameoverlay {
+    cursor:default;
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:#212221;
+    z-index:10;
+}
+
+#gameoverlay ul {
+    list-style-type:none;
+}
+
+#gameoverlay li span {
+    float:right;
+    text-align:right;
+}
+
+#gameoverlay ul {
+    margin-right: 2em;
+}
+
+#gameoverlay .stats li {
+    line-height:2;
+}
+
+#gameoverlay .stats {
+    color:#ffffff;
+    padding:20px;
+    background-color:#5d7e3e;
+    width:40%;
+    min-width:150px;
+    display:inline-block;
+    float:left;
+    box-sizing:border-box;
+    position:relative;
+    height:100%;
+}
+
+#totalscoreparent {
+    padding-top:1em;
+    padding-bottom:1em;
+    border-top:4px solid #212221;
+    border-bottom:4px solid #212221;
+}
+
+#totalscoreparent .totalscore {
+    float:right;
+    text-align:right;
+}
+
+.upgrades li:hover {
+    background-color:#111111;
+    cursor:pointer;
+}
+
+#forestcleared {
+    padding-top:1em;
+    text-align:center;
+}
+
+.upgrades #money {
+    position:absolute;
+    height:32px;
+    padding:5px;
+    width:200px;
+    background-image:url(img/cashmoney.png);
+    background-repeat:no-repeat;
+    background-color:#111111;
+    background-position:5px 5px;
+
+    top:35px;
+    right:35px;
+    line-height:32px;
+    text-align:right;
+    border-radius:3px;
+}
+
+#gameoverlay .upgrades {
+    min-width:400px;
+    color:#ffffff;
+    display:inline-block;
+    padding:20px;
+    float:left;
+    width:auto;
+}
+
+
+.upgrades .upgradelist {
+    padding-left:0;
+    padding-right:0;
+    margin-right:0;
+}
+
+.upgrades .upgradelist li {
+    margin:0;
+    padding:0;
+    position:relative;
+    background-color:#1a1a1a;
+    overflow:hidden;
+    border-radius:3px;
+    line-height:0.5;
+    margin-bottom:4px;
+}
+
+.upgrades .upgradelist li:hover {
+    background-color:#111111;
+}
+
+.upgrades .upgradelist li .upgradeprocess {
+    position:absolute;
+    height:100%;
+    width:0%;
+    background-color:#5d7e3e;
+    display:inline-block;
+    z-index:1;
+}
+
+.upgrades .upgradelist li p {
+    position:relative;
+    padding-left:7px;
+    padding-right:7px;
+    z-index:2;
+}
+
+
+.upgrades .upgradelist li p span {
+    display:inline-block;
+    float:right;
+    text-align:right;
+}
+
+#nextround {
+    color:#ffffff;
+    text-align:right;
+    width:50%;
+    
+    position:absolute;
+    right: 0;
+    bottom:0;
+    padding:2em;
+    background-color:#5d7e3e;
+    max-height:10%;
+    cursor:pointer;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    border-top-left-radius: 3px;
+}
+
+#nextround:hover {
+    background-color:#4d5e2e;
+}
+
+
+#controls {
+    position:absolute;
+    width:40%;
+    min-width:150px;
+    bottom:0;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+
+#controls div {
+    color:#ffffff;
+    background-color:#212221;
+    border-radius:3px;
+    width:100%;
+    box-sizing:border-box;
+    padding:20px;
+    margin:10px;
+    cursor:pointer;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+}
+
+#controls div:hover {
+    background-color:#111111;
+}
+
+#controls div.muted::after{
+    content:"d.";
+}
+#controls .mutebutton::after{
+    content:"?";
+}
+
+#mainmenu:hover::after{
+    content:" - THIS WILL RESET PROGRESS!";
+}
+
+#winprompt {
+    display:none;
+    z-index:15;
+    position:absolute;
+    width:100%;
+    height:100%;
+    color:#ffffff;
+    cursor:default;
+}
+
+#winprompt .stuff {
+    position:absolute;
+    width:50%;
+    height:auto;
+    z-index:16;
+    left:25%;
+    top:30%;
+    box-sizing:border-box;
+}
+
+#winprompt .stuff h1 {
+    background-color:#5d7e3e;
+    display:inline-block;
+    width:100%;
+    padding:10px;
+    margin:5px;
+}
+
+#winprompt .stuff .button{
+    cursor:pointer;
+    display:inline-block;
+    width:100%;
+    padding:10px;
+    margin:5px;
+    background-color:#212221;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+}
+
+#winprompt .stuff .button:hover {
+    background-color:#4d5e2e;
+}
+
+#winprompt .background {
+    background-color:#222222;
+    opacity:0.6;
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+#blackscreen {
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:#121212;
+    z-index:24;
+    display:none;
+}
+
+#winscreen {
+    z-index:26;
+    position:absolute;
+    width:100%;
+    height:100%;
+    color:#ffffff;
+    cursor:default;
+    display:none;
+}
+
+#winscreen .background {
+    background-color:#222222;
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+#endthing {
+    z-index:27;
+    position:absolute;
+    width:40%;
+    height:auto;
+    left:30%;
+    top:100%;
+}
+
+#endthing p, #endthing h1, #endthing h2, #endthing h3 {
+    display:inline-block;
+    width:100%;
+    text-align:center;
+}
+

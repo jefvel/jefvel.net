@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>BURNING GAME</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--gonna googelanalyze this-->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-51045404-3', 'jefvel.net');
+        ga('send', 'pageview');
+    </script>
+    <!--Add a font-->
+    <link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+    <script src="js/pixi.js"></script>
+    <script src="js/buzz.min.js"></script>
+    <script src="js/fgl-scaler.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script src="js/fgl.js"></script> -->
+
+</head>
+<body oncontextmenu="return false">
+    <script src="js/utils.js"></script>
+    <script src="js/mainscript.js"></script>
+    <script src="js/assets.js"></script>
+
+    <div id="gameoverlay"
+        style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;' 
+        unselectable='on'
+        onselectstart='return false;' 
+        onmousedown='return false;'
+    >
+        <div class="stats">
+            <h1>Round Stats</h1>
+            <ul class="statslist">
+                <li>Trees<span id="treesburned"></span></li>
+                <li>Areas<span id="areascleared"></span></li>
+                <li>GuyCombos<span id="guycombos"></span></li>
+                <li>&nbsp;</li>
+                <li>Round&nbsp;Score<span id="roundscore"></span> </li>
+            </ul>
+            <div id="totalscoreparent">Total&nbsp;Score<span class="totalscore"></span></div>
+            <div id="forestcleared"><span></span>% cleared. 95% to win!</div>
+        </div>
+
+        <div class="upgrades">
+            <h1>Upgrades</h1>
+            <ul class="upgradelist">
+                <li id="upgrade1"><div id="exploProg" class="upgradeprocess"></div>
+                    <p>
+                        Explosive&nbsp;Amount
+                            <span id="explosionLevel"></span>
+                    </p>
+                </li>
+                <li id="upgrade2"><div id="guyProg" class="upgradeprocess"></div>
+                    <p>
+                        Guy&nbsp;Amount
+                            <span id="guyLevel"></span>
+                    </p>
+                </li>
+                <li id="upgrade3"><div id="exploRadProg" class="upgradeprocess"></div>
+                    <p>
+                        Explosion&nbsp;Radius
+                            <span id="explosionRadiusLevel"></span>
+                    </p>
+                </li>
+                <li id="upgrade4"><div id="guyRadProg" class="upgradeprocess"></div>
+                    <p>
+                        Guy&nbsp;Burn&nbsp;Radius
+                        <span id="guyRadiusLevel"></span>
+                    </p>
+                </li>
+                <li id="upgrade5"><div id="guyLifeProg" class="upgradeprocess"></div>
+                    <p>Guy&nbsp;Lifetime
+                            <span id="guyLifeLevel"></span>
+                    </p>
+                </li>
+            </ul>
+            <div id="money"></div>
+        </div>
+        <div id="nextround"><h1>Next Round</h1></div>
+        <div id="controls">
+            <div class="mutebutton">Mute</div>
+            <div id="mainmenu">Main Menu</div>
+        </div>
+    </div>
+
+    <div id="winprompt"
+        style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;' 
+        unselectable='on'
+        onselectstart='return false;' 
+        onmousedown='return false;'
+        >
+        <div class="background"></div>
+        <div class="stuff">
+            <h1>You cleared enough to win! Win now?</h1>
+            <div class="button" id="yeswin">
+                YES!
+            </div>
+            <div class="button" id="notyet">
+                Not yet
+            </div>
+        </div>
+    </div>
+
+    <div id="blackscreen"></div>
+
+    <div id="winscreen"
+        style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;' 
+        unselectable='on'
+        onselectstart='return false;' 
+        onmousedown='return false;'
+    >
+        <div id="endthing">
+            <h1>Congratulations!</h1>
+            <h1>&nbsp;</h1>
+            <h2>You won!</h2>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>Thank you for playing!</h1>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h2>Final score:<span class="totalscore"></span></h2>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h2>All trees are dead!</h2>
+            <p>Good job on that.</p>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <p>(Well a few trees are left. They can live.)</p>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>Credits</h1>
+            <h1>&nbsp;</h1>
+            <h2>Executive Producer</h2>
+            <h3>JEFVEL</h3>
+            <h2>Executive End Voice Engineer</h2>
+            <h3>FILIP</h3>
+            <h1>&nbsp;</h1>
+            <h2>Secondary Producer</h2>
+            <h3>John McCready</h3>
+            <h1>&nbsp;</h1>
+            <h2>Lead Artist</h2>
+            <h3>Kurt Lemon-Face</h3>
+            <h1>&nbsp;</h1>
+            <h2>Other Artist</h2>
+            <h3>James Oliverman</h3>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>QA Department</h1>
+            <h3>James Oliverman</h3>
+            <h3>Julia Ofteran</h3>
+            <h3>Konrad K.</h3>
+            <h3>Microwave</h3>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>Modelers</h1>
+            <h3>Horseman Juicemaster</h3>
+            <h3>Nick Brady</h3>
+            <h3>Brady Brady</h3>
+            <h3>John's Brady</h3>
+            <h3>Brave Trousers</h3>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>Audio Engineering Dept.</h1>
+            <h1>&nbsp;</h1>
+            <h2>Sound Effects</h2>
+            <h3>Peter Peabody</h3>
+            <h3>Computer Keyboard</h3>
+            <h3>Monday Tenenbaum</h3>
+            <h3>Nike Sneakers</h3>
+            <h3>Ulfred Hareson</h3>
+            <h3>Piano Man Joel</h3>
+            <h1>&nbsp;</h1>
+            <h2>Music</h2>
+            <h3>Phil Dark</h3>
+            <h3>Can't Games</h3>
+            <h3>Liu Jung</h3>
+            <h3>Thomas Ledin</h3>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>Programming Engineers</h1>
+            <h3>Roboto Robotto</h3>
+            <h3>Roboto Robotto #2</h3>
+            <h3>Hayamura Kitazaki</h3>
+            <h3>Jung Lee</h3>
+            <h3>Miu Mau</h3>
+            <h3>Sung Hoo</h3>
+            <h3>Patrick Elbst</h3>
+            <h3>Honduras Mambo</h3>
+            <h3>Dong Lee</h3>
+
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
+            <h1>Final Thanks</h1>
+            <h3>OSCAR</h3>
+            <h3>TOBBE</h3>
+            <h3>POWERFORCE55</h3>
+            <h3>PALLKARS</h3>
+            <h1>&nbsp;</h1>
+            <h3>And you, who played the game!</h3>
+            <p>I thank you again.</p>
+            <h1>&nbsp;</h1>
+        </div>
+
+    </div>
+
+</body>
+</html>
